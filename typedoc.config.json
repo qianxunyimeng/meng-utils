@@ -1,0 +1,11 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints" : ["./src/array","./src/dom","./src/fun","./src/obj","./src/string","./src/utils"],
+    "exclude": ["./test/**/*","./coverage"],
+    "out": "./docs",
+    "name": "meng-utils 工具库",
+    "hideGenerator": true,
+    "includeVersion": false,
+    "disableSources": true,
+    "readme": "./README.md"
+}
