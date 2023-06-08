@@ -1,7 +1,9 @@
 {
-  "name": "mengui-utils",
-  "version": "1.0.0",
-  "description": "",
+  "name": "meng-utils",
+  "version": "1.0.2",
+  "description": "一个js工具函数库，将平时常用的方法封装成通用库",
+  "keywords": ["ts","utils","工具库"],
+  "author": "shiql",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "typings": "lib/types/src/index.d.ts",
@@ -10,7 +12,7 @@
   ],
   "unpkg": "lib/index.js",
   "jsdelivr": "lib/index.js",
-
+  "homepage": "",
   "scripts": {
     "prebuild": "rimraf lib",
     "prebuild:prod": "rimraf lib",
@@ -25,9 +27,11 @@
     "prepare": "husky install"
   },
   "sideEffects": "false",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qianxunyimeng/meng-utils.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",

@@ -1,6 +1,6 @@
 {
     "$schema": "https://typedoc.org/schema.json",
-    "entryPoints" : ["./src/array","./src/dom","./src/fun","./src/obj","./src/string","./src/utils"],
+    "entryPoints" : ["./src/array","./src/dom","./src/fun","./src/obj","./src/string","./src/utils","./src/time"],
     "exclude": ["./test/**/*","./coverage"],
     "out": "./docs",
     "name": "meng-utils 工具库",

@@ -51,5 +51,6 @@ module.exports = {
     'jest/expect-expect': 'off',
     'no-invalid-this': 'off',
     'no-underscore-dangle': 'off',
+    'no-restricted-syntax': 'off',
   },
 };

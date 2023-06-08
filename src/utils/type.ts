@@ -1,4 +1,8 @@
-const { toString } = Object.prototype;
+const { toString, hasOwnProperty: hasOwn } = Object.prototype;
+// const hasOwn = Object.prototype.hasOwnProperty;
+// const toStr = Object.prototype.toString;
+
+// const gOPD = Object.getOwnPropertyDescriptor;
 
 /**
  * 获取值的类型标签
@@ -61,7 +65,8 @@ export function isArray(value: any): value is Array<any> {
 
 /**
  * 判断是否是纯粹的对象
- * @param value -待判定的目标参数
+ * 纯粹对象：通过字面量{},或者 new Object()创建的对象
+ * @param obj -待判定的目标参数
  * @returns true / false
  * @example
  * ```ts
@@ -69,6 +74,29 @@ export function isArray(value: any): value is Array<any> {
  * isPlanObject({}) // => true
  * ```
  */
-export function isPlanObject(value: any) {
-  return getTag(value) === '[object Object]';
+export function isPlanObject(obj: any) {
+  if (!obj || getTag(obj) !== '[object Object]') {
+    return false;
+  }
+
+  const hasOwnConstructor = hasOwn.call(obj, 'constructor');
+  const hasIsPrototypeOf =
+    obj.constructor &&
+    obj.constructor.prototype &&
+    hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+  // Not own constructor property must be Object
+  if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
+    return false;
+  }
+
+  // Own properties are enumerated firstly, so to speed up,
+  // if last one is own, then all properties are own.
+  let key;
+  for (key in obj) {
+    /**/
+  }
+
+  return typeof key === 'undefined' || hasOwn.call(obj, key);
 }
+
+export type Nullable<T> = T | null;

@@ -18,7 +18,8 @@
     "experimentalDecorators": true, // 启动装饰器
     "esModuleInterop": true,
     "removeComments": false, // 删除注释
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "suppressImplicitAnyIndexErrors":true
   },
   "include": [
     "src/*" // 导入目录

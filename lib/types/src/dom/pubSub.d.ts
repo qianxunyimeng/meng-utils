@@ -1,3 +1,4 @@
+/** 发布订阅者模式实现消息订阅 */
 export declare class PubSub {
   private cbFns;
   /**

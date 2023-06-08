@@ -13,3 +13,32 @@ export function uuid() {
   }
   return date + parseInt(pwd, 10);
 }
+
+const isObject = (val: any) => typeof val === 'object' && val !== null;
+
+/**
+ *
+ *判断两值是不是想等的，如果是对象的话不会比较原型链的属性
+ * @param {*} val1
+ * @param {*} val2
+ * @return {*}
+ */
+export function equal(val1: any, val2: any) {
+  if (isObject(val1) && isObject(val2)) {
+    const keys1 = Object.keys(val1);
+    const keys2 = Object.keys(val2);
+    if (keys1.length !== keys2.length) {
+      return false;
+    }
+    for (const k of keys1) {
+      if (!keys2.includes(k)) {
+        return false;
+      }
+      if (!equal(val1[k], val2[k])) {
+        return false;
+      }
+    }
+    return true;
+  }
+  return val1 === val2;
+}

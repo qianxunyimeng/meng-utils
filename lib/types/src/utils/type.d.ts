@@ -44,7 +44,8 @@ export declare function isString(value: any): boolean;
 export declare function isArray(value: any): value is Array<any>;
 /**
  * 判断是否是纯粹的对象
- * @param value -待判定的目标参数
+ * 纯粹对象：通过字面量{},或者 new Object()创建的对象
+ * @param obj -待判定的目标参数
  * @returns true / false
  * @example
  * ```ts
@@ -52,4 +53,5 @@ export declare function isArray(value: any): value is Array<any>;
  * isPlanObject({}) // => true
  * ```
  */
-export declare function isPlanObject(value: any): boolean;
+export declare function isPlanObject(obj: any): boolean;
+export type Nullable<T> = T | null;
